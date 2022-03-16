@@ -1,0 +1,193 @@
+.idCard {
+    display: grid;
+    width: calc(100% - 2rem);
+    border-radius: .5rem;
+    background-color: var(--color-main);
+    overflow: hidden;
+    grid-template-columns: 11rem 1fr;
+    grid-template-rows: 11rem 1fr;
+    margin: 1rem 1rem 0 1rem;
+}
+
+.idCard .picture {
+    height: calc(100% - 2rem - 10px);
+    width: calc(100% - 2rem - 10px);
+    margin: .75rem;
+    border-radius: 100%;
+    border: 5px solid var(--color-dark);
+    background-color: var(--color-gray-75);
+    object-fit: cover;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.idCard .picture svg {
+    stroke: var(--color-main-light);
+}
+
+.idCard .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.idCard .info label {
+    padding-left: .5rem;
+    font-size: 1rem;
+    color: var(--color-dark);
+}
+
+.idCard .info .name {
+    font-size: 1.5rem;
+    font-weight: 300;
+    height: 2rem;
+    width: 75%;
+    background-color: var(--color-gray-25);
+    border-radius: 2px 5px 2px ;
+    border: none;
+    outline: none;
+    border-bottom: 5px solid var(--color-dark);
+    border-left: 5px solid var(--color-dark);
+    padding: .5rem;
+    color: var(--color-dark);
+    margin: 3px .25em 1em .25em;
+    font-family: monospace;
+    
+}
+
+.idCard .info .name::placeholder {
+    color: var(--color-white-75);
+}
+
+.idCard .name:focus {
+    background-color: var(--color-gray-50);
+    color: var(--color-white);
+}
+
+.idCard .buttonContainer {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: linear-gradient(to left, var(--color-main-dark) , var(--color-gray));
+    border-top: 5px solid var(--color-dark);
+}
+
+.idCard .buttonContainer button {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin: 0 .75rem 0 0;
+    border: none;
+    outline: none;
+    background-color: var(--color-main-dark);
+    cursor: pointer;
+    outline: 2px solid var(--color-main-light);
+}
+
+.idCard .buttonContainer button svg {
+    stroke: var(--color-main-light);
+}
+
+.idCard .buttonContainer #saveButton {
+    background-color: var(--color-succes-dark);
+    outline: 2px solid var(--color-succes-light);
+} 
+
+.idCard .buttonContainer #saveButton svg {
+    stroke: var(--color-succes-light);
+}
+
+.idCard .buttonContainer #deleteButton {
+    background-color: var(--color-danger-dark);
+    outline: 2px solid var(--color-danger-light);
+} 
+
+.idCard .buttonContainer #deleteButton svg {
+    stroke: var(--color-danger-light);
+}
+
+
+.idCard .buttonContainer button:hover, 
+.idCard .buttonContainer button:focus {
+    background-color: var(--color-main-light);
+    outline: 2px solid var(--color-main);
+}
+
+.idCard .buttonContainer button:active {
+    filter: saturate(.5);
+} 
+
+.idCard .buttonContainer #saveButton:hover, 
+.idCard .buttonContainer #saveButton:focus{
+    background-color: var(--color-succes-light);
+    outline: 2px solid var(--color-succes);
+} 
+
+.idCard .buttonContainer #deleteButton:hover, 
+.idCard .buttonContainer #deleteButton:focus {
+    background-color: var(--color-danger-light);
+    outline: 2px solid var(--color-danger);
+} 
+
+.idCard .buttonContainer button:hover svg,
+.idCard .buttonContainer button:focus svg {
+    stroke: var(--color-main);
+}
+
+.idCard .buttonContainer #saveButton:hover svg,
+.idCard .buttonContainer #saveButton:focus svg {
+    stroke: var(--color-succes);
+}
+
+.idCard .buttonContainer #deleteButton:hover svg,
+.idCard .buttonContainer #deleteButton:focus svg {
+    stroke: var(--color-danger);
+}
+
+.selector {
+    height: calc(100% - 5rem);
+    padding: 0 1rem 5rem 1rem;
+    overflow-y: scroll;
+}
+
+.playerButton.add {
+    outline: none;
+    border: none;
+    width: calc(100% - .5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    margin: .25rem;
+    margin-top: .75rem;
+    padding: .25rem;
+    background-color: var(--color-dark);
+    border: 2px dashed var(--color-main);
+    border-radius: 5px;
+    transition: all ease-in 125ms;
+    cursor: pointer;
+}
+
+.playerButton.add:hover,
+.playerButton.add:focus {
+    border: 2px dashed var(--color-main-light);
+}
+
+.playerButton.add:focus {
+    background-color: var(--color-light);
+}
+
+.playerButton.add svg {
+    background: transparent !important;
+    width: 20px;
+    height: 20px;
+    stroke: var(--color-main);
+}
+
+.playerButton.add:hover svg,
+.playerButton.add:focus svg {
+    stroke: var(--color-main-light);
+}

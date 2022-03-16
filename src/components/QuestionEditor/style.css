@@ -1,0 +1,158 @@
+.question {
+    width: calc(100% - 15em);
+    margin-top: 1em;
+    color: var(--color-white);
+}
+
+.question .header {
+    width: 100%;
+    border-bottom: 3px solid var(--color-main);
+    border-radius: 0 3px 3px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2em;
+    padding-bottom: .5em;
+}
+
+.question .header .nr {
+    color: var(--color-main-light);
+}
+
+.question .answers {
+    width: calc(100% - 1em);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1em .5em 1em .5em;
+    border-left: 3px solid var(--color-main);
+    border-radius: 0 0 0 3px;
+}
+
+.question .answers .answer {
+    width: calc(33% - .5em);
+    height: 2em;
+    margin: .25em .25em 1em .25em;
+    display: grid;
+    grid-template-columns: 2.5em 1fr;
+}
+
+.question .answers .answer input {
+    width: 90%;
+    padding: 0;
+    border: none;
+    outline: none;
+    margin: 0;
+    height: 100%;
+    background-color: inherit;
+    color: inherit;
+    font-family: inherit;
+    border-left: 2px solid var(--color-main);
+    padding: 3px 3px 3px .5em;
+    background-color: var(--color-normal);
+    border-radius: 0 3px 3px 0;
+}
+
+.question .answers .answer input:focus {
+    background-color: var(--color-light);
+}
+
+.question .answers .answer button {
+    border: none;
+    outline: none;
+    height: 100%;
+    padding: 0;
+    margin-right: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    transition: all 125ms ease-in;
+}
+
+.question .answers .answer button.correct:hover,
+.question .answers .answer button.correct:focus {
+    background-color: var(--color-succes-light);
+    border: 2px solid var(--color-succes);
+}
+
+.question .answers .addAnswer {
+    width: calc(33% - 1em);
+}
+
+.question .answers .addAnswer button {
+    border: none;
+    outline: none;
+    height: 2em;
+    width: calc(90% + 2em);
+    background-color: var(--color-dark);
+    border: 1px dashed var(--color-main);
+    border-radius: 3px;
+    transition: all 125ms ease-in;
+}
+
+.question .answers .addAnswer button:hover,
+.question .answers .addAnswer button:focus {
+    border: 1px dashed var(--color-main-light);
+}
+
+.question .answers .addAnswer button:hover {
+    transform: translateY(-.25rem);
+}
+
+.question .answers .addAnswer button:focus {
+    background-color: var(--color-light);
+}
+
+.question .answers .addAnswer button svg {
+    stroke: var(--color-main);
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.question .answers .addAnswer button:hover svg,
+.question .answers .addAnswer button:focus svg {
+    stroke: var(--color-main-light);
+}
+
+.question .answers .answer button svg {
+    height: 1.5em;
+    width: 1.5em;
+    display: none;
+}
+
+.question .answers .answer button.correct {
+    background-color: var(--color-succes);
+    border: 2px solid var(--color-succes-light)
+}
+
+.question .answers .answer button.false {
+    background-color: var(--color-danger);
+    border: 2px solid var(--color-danger-light)
+}
+
+.question .answers .answer button.false:hover,
+.question .answers .answer button.false:focus {
+    background-color: var(--color-danger-light);
+    border: 2px solid var(--color-danger)
+} 
+
+.question .answers .answer button.correct svg.icon-tabler-check {
+    display: block;
+    stroke: var(--color-succes-light);
+}
+
+.question .answers .answer button.correct:hover svg.icon-tabler-check,
+.question .answers .answer button.correct:focus svg.icon-tabler-check {
+    stroke: var(--color-succes);
+}
+
+.question .answers .answer button.false svg.icon-tabler-plus {
+    display: block;
+    stroke: var(--color-danger-light);
+    transform: rotate(45deg);
+}
+
+.question .answers .answer button.false:hover svg.icon-tabler-plus,
+.question .answers .answer button.false:focus svg.icon-tabler-plus {
+    stroke: var(--color-danger);
+}

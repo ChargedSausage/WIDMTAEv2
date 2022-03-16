@@ -1,0 +1,58 @@
+.seasonCard {
+    height: 18em;
+    background-color: var(--color-normal);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform ease-in 125ms;
+    user-select: none;
+}
+
+.seasonCard:hover {
+    transform: translateY(-.25rem);
+}
+
+.seasonCard:active {
+    filter: saturate(.5);
+}
+
+.seasonCard .cardContent {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.seasonCard .cardContent .counter {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-main-light);
+    font-size: 2em;
+    background-color: var(--color-gray-75);
+    border-radius: .75em;
+    padding: .75rem 1.75rem;
+}
+
+.seasonCard .cardContent .counter svg {
+    stroke: var(--color-main-light);
+}
+
+.seasonCard h1 {
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--color-main-dark);
+    transition: all ease 125ms;
+    z-index: 1;
+    border-top: 5px solid var(--color-main);
+    color: var(--color-white);
+}
+
+.seasonCard:hover h1 {
+    background-color: var(--color-main);
+    border-top: 5px solid var(--color-main-dark);
+}

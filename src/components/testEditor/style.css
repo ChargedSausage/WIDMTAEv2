@@ -1,0 +1,33 @@
+.testEditor {
+    padding: 1em 1em 1em 0;
+    width: calc(100% - 1em);
+    height: calc(100% - 2em);
+    display: grid;
+    grid-template-rows: auto 1fr 10em;
+    user-select: none;
+}
+
+.testEditor .header h2 {
+    margin: 0;
+    margin-left: 5px;
+    color: var(--color-white);
+}
+
+.testEditor .header input {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: 3em;
+    margin: 0;
+    width: calc(100% - 5em);
+    color: var(--color-white);
+    border-bottom: 5px solid var(--color-main);
+    border-radius: 0 5px 5px 0;
+}
+
+.testEditor .header input:focus {
+    color: var(--color-white);
+    background-color: var(--color-gray-50);
+}
