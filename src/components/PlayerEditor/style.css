@@ -1,7 +1,7 @@
 .idCard {
     display: grid;
     width: calc(100% - 2rem);
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background-color: var(--color-main);
     overflow: hidden;
     grid-template-columns: 11rem 1fr;
@@ -12,7 +12,7 @@
 .idCard .picture {
     height: calc(100% - 2rem - 10px);
     width: calc(100% - 2rem - 10px);
-    margin: .75rem;
+    margin: 0.75rem;
     border-radius: 100%;
     border: 5px solid var(--color-dark);
     background-color: var(--color-gray-75);
@@ -34,7 +34,7 @@
 }
 
 .idCard .info label {
-    padding-left: .5rem;
+    padding-left: 0.5rem;
     font-size: 1rem;
     color: var(--color-dark);
 }
@@ -45,16 +45,19 @@
     height: 2rem;
     width: 75%;
     background-color: var(--color-gray-25);
-    border-radius: 2px 5px 2px ;
+    border-radius: 2px 5px 2px;
     border: none;
     outline: none;
     border-bottom: 5px solid var(--color-dark);
     border-left: 5px solid var(--color-dark);
-    padding: .5rem;
+    padding: 0.5rem;
     color: var(--color-dark);
-    margin: 3px .25em 1em .25em;
+    margin: 3px 0.25em 1em 0.25em;
     font-family: monospace;
-    
+}
+
+.idCard .info .name:disabled {
+    background-color: var(--color-main-dark);
 }
 
 .idCard .info .name::placeholder {
@@ -71,7 +74,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background: linear-gradient(to left, var(--color-main-dark) , var(--color-gray));
+    background: linear-gradient(to left, var(--color-main-dark), var(--color-gray));
     border-top: 5px solid var(--color-dark);
 }
 
@@ -79,7 +82,7 @@
     height: 40px;
     width: 40px;
     border-radius: 100%;
-    margin: 0 .75rem 0 0;
+    margin: 0 0.75rem 0 0;
     border: none;
     outline: none;
     background-color: var(--color-main-dark);
@@ -94,7 +97,7 @@
 .idCard .buttonContainer #saveButton {
     background-color: var(--color-succes-dark);
     outline: 2px solid var(--color-succes-light);
-} 
+}
 
 .idCard .buttonContainer #saveButton svg {
     stroke: var(--color-succes-light);
@@ -103,34 +106,33 @@
 .idCard .buttonContainer #deleteButton {
     background-color: var(--color-danger-dark);
     outline: 2px solid var(--color-danger-light);
-} 
+}
 
 .idCard .buttonContainer #deleteButton svg {
     stroke: var(--color-danger-light);
 }
 
-
-.idCard .buttonContainer button:hover, 
+.idCard .buttonContainer button:hover,
 .idCard .buttonContainer button:focus {
     background-color: var(--color-main-light);
     outline: 2px solid var(--color-main);
 }
 
 .idCard .buttonContainer button:active {
-    filter: saturate(.5);
-} 
+    filter: saturate(0.5);
+}
 
-.idCard .buttonContainer #saveButton:hover, 
-.idCard .buttonContainer #saveButton:focus{
+.idCard .buttonContainer #saveButton:hover,
+.idCard .buttonContainer #saveButton:focus {
     background-color: var(--color-succes-light);
     outline: 2px solid var(--color-succes);
-} 
+}
 
-.idCard .buttonContainer #deleteButton:hover, 
+.idCard .buttonContainer #deleteButton:hover,
 .idCard .buttonContainer #deleteButton:focus {
     background-color: var(--color-danger-light);
     outline: 2px solid var(--color-danger);
-} 
+}
 
 .idCard .buttonContainer button:hover svg,
 .idCard .buttonContainer button:focus svg {
@@ -148,22 +150,35 @@
 }
 
 .selector {
-    height: calc(100% - 5rem);
-    padding: 0 1rem 5rem 1rem;
+    height: calc(100% - 5rem - 2em);
+    width: calc(100% - 2rem);
+    padding: 0 0.25rem 5rem 1rem;
+    margin-top: 1em;
     overflow-y: scroll;
+    position: relative;
+}
+
+.selector::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.selector::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: var(--color-normal);
+    border-right: 1px solid var(--color-main);
 }
 
 .playerButton.add {
     outline: none;
     border: none;
-    width: calc(100% - .5rem);
+    width: calc(100% - 1rem);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 2rem;
-    margin: .25rem;
-    margin-top: .75rem;
-    padding: .25rem;
+    margin: 0.5rem 0.5rem 1rem 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.25rem;
     background-color: var(--color-dark);
     border: 2px dashed var(--color-main);
     border-radius: 5px;
@@ -171,13 +186,14 @@
     cursor: pointer;
 }
 
-.playerButton.add:hover,
-.playerButton.add:focus {
+.playerButton.add:hover {
+    transform: translateY(-0.25rem);
     border: 2px dashed var(--color-main-light);
 }
 
 .playerButton.add:focus {
     background-color: var(--color-light);
+    border: 2px dashed var(--color-main-light);
 }
 
 .playerButton.add svg {
@@ -197,24 +213,25 @@
     border: none;
     color: var(--color-white);
     font-family: monospace;
-    width: calc(100% - .5rem);
+    width: calc(100% - 0.5rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 2rem;
-    margin: .25rem;
-    margin-top: .75rem;
-    padding: .25rem;
+    margin: 0.25rem;
+    margin-top: 0.75rem;
+    padding: 0.25rem;
     background-color: var(--color-normal);
     border-bottom: 3px solid var(--color-main);
     border-radius: 5px;
     transition: all ease-in 125ms;
     cursor: pointer;
+    user-select: none;
 }
 
 .playerButton:hover {
     border-bottom: 3px solid var(--color-main-light);
-    transform: translateX(.5rem);
+    transform: translateX(0.25rem);
 }
 
 .playerButton:focus {
@@ -223,7 +240,7 @@
 }
 
 .playerButton:active {
-    filter: saturate(.5);
+    filter: saturate(0.5);
 }
 
 .playerButton span {
@@ -238,10 +255,18 @@
     fill: var(--color-white);
     background-color: var(--color-main);
     padding: 3px;
-    margin: .25rem;
+    margin: 0.25rem;
     border-radius: 100%;
 }
 
 .playerButton:hover svg {
     background-color: var(--color-main-light);
+}
+
+.playerButton.active {
+    border-bottom: 3px solid var(--color-succes-light);
+}
+
+.playerButton.active svg {
+    background-color: var(--color-succes-light);
 }
