@@ -1,6 +1,29 @@
 import QuestionEditor from '../QuestionEditor';
-import TestSelector from '../testSelector';
 import './style.css';
+import { PlusIcon, ListIcon } from '../icons';
+
+function Choice(props) {
+    return (
+        <button className="choice">
+            <ListIcon/>
+            <span>{props.test.index}</span>
+        </button>
+    );
+}
+
+function TestSelector(props) {
+    return (
+        <div className="testSelector">
+            { props.tests ?
+            props.tests.map((test) => {
+                return <Choice test={test}></Choice>;
+            }) : ''}
+            <button className="choice add">
+                <PlusIcon/>
+            </button>
+        </div>
+    )
+}
 
 function TestEditor() {
     return (
