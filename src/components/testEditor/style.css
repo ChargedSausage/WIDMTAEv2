@@ -21,10 +21,10 @@
     font-family: inherit;
     font-size: 3em;
     margin: 0;
-    width: calc(100% - 5em);
+    width: calc(100% - 1em);
     color: var(--color-white);
-    border-bottom: 5px solid var(--color-main);
-    border-radius: 0 5px 5px 0;
+    border-bottom: 3px solid var(--color-secondary);
+    border-radius: 0 3px 3px 0;
 }
 
 .testEditor .header input:focus {
@@ -42,9 +42,9 @@
 .testSelector .choice {
     outline: none;
     border: none;
-    height: calc(100% - .5em);
+    height: calc(100% - 0.5em);
     width: 6em;
-    margin: .25em;
+    margin: 0.25em;
     background-color: var(--color-normal);
     border-radius: 5px;
     display: flex;
@@ -61,7 +61,7 @@
 }
 
 .testSelector .choice:hover {
-    transform: translateY(-.25rem);
+    transform: translateY(-0.25rem);
     border-top: 3px solid var(--color-main-light);
 }
 

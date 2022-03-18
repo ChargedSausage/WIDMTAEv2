@@ -1,8 +1,7 @@
 import './style.css';
 
-import { useState, useRef } from 'react';
-import { SaveIcon, UserIcon, TrashIcon, PlusIcon } from '../icons';
-import { act } from '@testing-library/react';
+import { useRef } from 'react';
+import { SaveIcon, UserIcon, TrashIcon, PlusIcon, UsersIcon } from '../icons';
 
 function IdCard(props) {
     const nameInput = useRef(null);
@@ -17,16 +16,26 @@ function IdCard(props) {
 
     return (
         <div className='idCard'>
-            <div className='picture'>
-                <UserIcon />
-            </div>
+            <div className='picture'>{activePlayerCount > 1 ? <UsersIcon /> : <UserIcon />}</div>
             <div className='info'>
                 <label>naam</label>
                 <input
                     className='name'
                     ref={nameInput}
-                    defaultValue={playerInputName}
-                    placeholder={activePlayerCount == 1 ? playerInputName : activePlayerCount + ' spelers'}
+                    defaultValue={
+                        activePlayerCount == 0
+                            ? 'Kies speler'
+                            : activePlayerCount == 1
+                            ? playerInputName
+                            : activePlayerCount + ' spelers'
+                    }
+                    placeholder={
+                        activePlayerCount == 0
+                            ? 'Kies speler'
+                            : activePlayerCount == 1
+                            ? playerInputName
+                            : activePlayerCount + ' spelers'
+                    }
                     disabled={activePlayerCount != 1}
                 />
             </div>
@@ -96,13 +105,6 @@ function PlayerSelector(props) {
 }
 
 function PlayerEditor(props) {
-    let playerInputName = null;
-    if (props.activePlayerNames) {
-        if (props.activePlayerNames.length == 1) {
-            playerInputName = props.activePlayerNames[0];
-        }
-    }
-
     return (
         <>
             <IdCard
